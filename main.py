@@ -2,9 +2,6 @@
 for x in range(length_list) :
     print(a[x])
 
-
-
-
 def bubble_sort (a) :
     for i in range(1, len(a)) :
         for j  in range(0, len(a)) :
@@ -438,80 +435,50 @@ def vhodit(A):
 
 vhodit(A)
 '''
-'''
-КАЛЬКУЛЯТОР
-
-a = float(input())
-b = float(input())
-result_S = float()
-operation = str(input())
+'''Калькулятор
+a = float(input('Введите первое значение : '))
+b = float(input('Введите второе значение : '))
+result = float()
+operation = str(input('Выберите операцию : '))
 
 
 if operation == '*':
-    result_S = a * b
+    result = a * b
+    print('Результат операции :', result)
 elif operation == '+':
-    result_S = a + b
+    result = a + b
+    print('Результат операции :', result)
 elif operation == '-':
-    result_S = a - b
+    result = a - b
+    print('Результат операции :', result)
 elif operation == 'pow':
-    result_S = a ** b
-print(result_S)
-
+    result = a ** b
+    print('Результат операции :', result, operation, a, b)
 if operation == 'div':
     try:
-        result_S = a // b
+        result = a // b
     except ZeroDivisionError:
         print('Деление на 0!')
     else:
-        print(result_S)
+        print('Результат операции :', result)
 elif operation == 'mod':
     try:
-        result_S = a % b
+        result = a % b
     except ZeroDivisionError:
         print('Деление на 0!')
     else:
-        print(result_S)
+        print('Результат операции :', result)
 elif operation == '/':
     try:
-        result_S = a / b
+        result = a / b
     except ZeroDivisionError:
         print('Деление на 0!')
     else:
-        print(result_S)
+        print('Результат операции :', result)
 '''
 
 '''
-a = float(input())
-b = float(input())
-result_S = float()
-operation = str(input())
-
-
-if operation == '*':
-    result_S = a * b
-elif operation == '+':
-    result_S = a + b
-elif operation == '-':
-    result_S = a - b
-elif operation == 'pow':
-    result_S = a ** b
-print(result_S)
-
-try:
-    1 / b
-except ZeroDivisionError:
-    print('Деление на 0!')
-    if operation == 'div':
-        result_S = a // b
-        print(result_S)
-    elif operation == 'mod':
-        result_S = a % b
-        print(result_S)
-    elif operation == '/':
-        result_S = a / b
-        print(result_S)
-
-'''
+Площадь фигуры
 
 figure = str(input())
 a = int(input())
@@ -529,5 +496,81 @@ elif figure == 'круг':
     result_S = pi * (a ** 2)
 
 print(result_S)
+
+'''
+
+'''поиск минимума в списке
+
+a = [int(i) for i in input().split()]
+m = a[0]
+for j in a:
+    if j > m:
+        m = j
+print(m)
+'''
+'''генерация массива (почитать про LIST COMPREHENSION)
+
+n = 3
+a = [[11] * n for i in range(n)]
+print(a)
+'''
+
+'''
+field_height, field_width, mines_count = (int(i) for i in input().split())
+a = [[0 for j in range(field_width)] for i in range(field_height)]
+print(a)
+'''
+'''Счастливый билет
+ticket = (input())
+a = int(ticket[0])
+b = int(ticket[1])
+c = int(ticket[2])
+d = int(ticket[3])
+e = int(ticket[4])
+f = int(ticket[5])
+if a + b + c == d + e + f:
+    print('Счастливый')
+else:
+    print('Обычный')
+'''
+'''
+first = int(input())
+second = int(input())
+third = int(input())
+samii_bolshoi_element = int()
+samii_malenkii_element = int()
+poslednii_element = int()
+spisok = [first, second, third]
+m = spisok[0]
+for i in spisok:
+    if i > m:
+        m = i
+samii_bolshoi_element = m
+for i in spisok:
+    if i < m:
+        m = i
+samii_malenkii_element = m
+
+for i in range(1, len(spisok)):
+    for j in range(0, len(spisok)):
+        if spisok[j] < spisok[i]:
+            spisok[j], spisok[i] = spisok[i], spisok[j]
+print(samii_bolshoi_element)
+print(samii_malenkii_element)
+print(spisok[1])
+'''
+slovo = 'программ'
+ov = ''
+
+n = input()
+programmers_count = list(n)
+
+if programmers_count[-1] in ('5', '6', '7','8','9','0'):
+    print(n + ' ' + slovo + 'ист' + 'ов')
+elif programmers_count[-2:] in ('11', '12', '13', '14', '15', '16', '17', '18', '19', '20'):
+    print(n + ' ' + slovo + 'ист' + 'ов')
+else:
+    print(n + ' ' + slovo + 'ист' + 'а', '\n')
+
 
 
