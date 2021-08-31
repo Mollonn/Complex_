@@ -559,18 +559,18 @@ print(samii_bolshoi_element)
 print(samii_malenkii_element)
 print(spisok[1])
 '''
-slovo = 'программ'
-ov = ''
 
+slovo = 'программ'
 n = input()
 programmers_count = list(n)
 
-if programmers_count[-1] in ('5', '6', '7','8','9','0'):
+if len(programmers_count) > 2:
+    if programmers_count[-1] == programmers_count[-2]:  # 11-20
+        print(n + ' ' + slovo + 'ист' + 'ов')
+if len(programmers_count) == 1:
+    if programmers_count[-1] == '1':
+        print(n + ' ' + slovo + 'ист')
+if programmers_count[-1] in ('5', '6', '7', '8', '9', '0'):  # 5-0
     print(n + ' ' + slovo + 'ист' + 'ов')
-elif programmers_count[-2:] in ('11', '12', '13', '14', '15', '16', '17', '18', '19', '20'):
-    print(n + ' ' + slovo + 'ист' + 'ов')
-else:
+elif programmers_count[-1] in ('2', '3', '4'):
     print(n + ' ' + slovo + 'ист' + 'а', '\n')
-
-
-
